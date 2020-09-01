@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.ayd1.proyectoclase.controller.inte.AydLibroInt;
+import com.ayd1.proyectoclase.model.BusquedaLibroDto;
 import com.ayd1.proyectoclase.repository.LibroRep;
 
 
@@ -19,8 +20,8 @@ public class AydLibroImp implements AydLibroInt {
 	
 
 	@Override
-	public ResponseEntity<?> getUsuarios(String titulo) {
-		return new ResponseEntity<>(libroRep.findByTituloContaining(titulo), HttpStatus.OK); 
+	public ResponseEntity<?> getUsuarios(BusquedaLibroDto busqueda) {
+		return new ResponseEntity<>(libroRep.findByTituloContaining(busqueda.getTitulo()), HttpStatus.OK); 
 	}
 
 }
