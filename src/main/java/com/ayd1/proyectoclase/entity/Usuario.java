@@ -36,5 +36,8 @@ public class Usuario {
 	@Column(name="fecha_nacimiento")
 	private Date fechaNacimiento;
 	
+	@Column(name = "password")
+	private String password;
+	
 
 }
